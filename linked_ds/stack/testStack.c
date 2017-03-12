@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
                 push(stack, i);
                 printf("getHead() = %d\n", getHead(stack));
         }
-        //printStack(stack);
+        printStack(stack);
         for (int i = 0; i < end; i++) {
                 printf("pop() = %d\n", pop(stack));
-                //printStack(stack);
+                printStack(stack);
         }
         printf("isEmpty() = %i\n", isEmpty(stack));
 }

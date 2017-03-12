@@ -38,7 +38,7 @@ bool isEmpty(Stack *st)
 int getHead(Stack *st)
 {
         if (st->head == NULL) {
-
+        
         } else {
                 return st->head->data;
         }
@@ -46,7 +46,7 @@ int getHead(Stack *st)
 
 int printStack(Stack *st)
 {
-        if (st->head = NULL) {
+        if (st->head == NULL) {
                 printf("NULL\n");
                 return 0;
         } else {
