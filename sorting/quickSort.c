@@ -6,6 +6,7 @@
 
 #include <stdbool.h>
 #include "sorting.h"
+#include "../linked_ds/stack/stack.h"
 
 int partition(int *, int, int);
 
@@ -14,7 +15,7 @@ void quickSort(int *array, int lenght, int recursion)
         if (recursion) {
                 recursiveQuickSort(array,0,lenght - 1);
         } else {
-          /* iterative not implemented yet */
+                iterativeQuickSort(array, lenght);
         }
 }
 
@@ -23,10 +24,44 @@ void recursiveQuickSort(int *array, int start, int end)
         if (start >= end ) {
                 return;
         } else {
-        int piv = partition(array, start, end);
-        recursiveQuickSort(array, start, piv - 1);
-        recursiveQuickSort(array, piv + 1, end);
+                int piv = partition(array, start, end);
+                recursiveQuickSort(array, start, piv - 1);
+                recursiveQuickSort(array, piv + 1, end);
         }
+}
+
+void iterativeQuickSort(int *array, int lenght)
+{
+        if ( lenght <= 1 ) {
+                return;
+        }
+        Stack *stack = malloc(sizeof(stack));
+        int start = 0, end = 0, piv = 0;
+        push(stack, lenght - 1);
+        push(stack, 0);
+        /* while the stack is not empty push 
+         * inside the index of sub-array to sort */
+        while (!isEmpty(stack)) {
+                /* pop the index of the subArray to partionate*/
+                if (pop(stack, &start)) return;
+                printStack(stack);
+                if (pop(stack, &end)) return;
+                printStack(stack);
+                printf("\n");
+
+                piv = partition(array, start, end);
+                /*insert in the stack the two subArray to sort*/
+                if (start < piv - 1) {
+                        if (push(stack, piv - 1)) return;
+                        if (push(stack, start)) return;
+                        printStack(stack);
+                }
+                if (piv + 1 < end ) {
+                        if (push(stack, end)) return;
+                        if (push(stack, piv + 1)) return;
+                        printStack(stack);
+                }
+         }
 }
 
 int partition(int *array, int i, int f)
