@@ -36,5 +36,7 @@ void iterativeMergeSort(int *array, int lenght);
 void quickSort(int *array, int lenght, int recursion);
 /* recursive quickSort*/
 void recursiveQuickSort(int *array, int start, int end);
+/* iterative quickSort */
+void iterativeQuickSort(int *array, int lenght);
 /*integerSort*/
 void integerSort(int *array, int lenght, int end);

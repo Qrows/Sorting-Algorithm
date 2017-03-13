@@ -17,8 +17,9 @@ struct Stack {
 };
 typedef struct Stack Stack;
 
+void initializeStack(Stack *stack);
 int push(Stack *, int elem);
-int pop(Stack *);
+int pop(Stack *st, int *var);
 bool isEmpty(Stack *);
 int getHead(Stack *);
 int printStack(Stack *);

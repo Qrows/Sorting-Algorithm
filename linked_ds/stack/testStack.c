@@ -13,14 +13,17 @@ int main(int argc, char *argv[])
         Stack *stack = malloc(sizeof(stack));
         int end = strtol(argv[1], NULL, 10);
         printf("isEmpty() = %i\n", isEmpty(stack));
-
+        int result;
         for (int i = 0; i < end; i++) {
                 push(stack, i);
-                printf("getHead() = %d\n", getHead(stack));
+                push(stack, 100 + i);
+                pop(stack, &result);
         }
         printStack(stack);
+
         for (int i = 0; i < end; i++) {
-                printf("pop() = %d\n", pop(stack));
+                pop(stack, &result);
+                printf("pop() = %d\n", result);
                 printStack(stack);
         }
         printf("isEmpty() = %i\n", isEmpty(stack));
