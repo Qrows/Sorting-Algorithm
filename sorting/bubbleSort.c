@@ -3,14 +3,18 @@
  * Complexity time T(n) = O(n^2)
  */
 #include "sorting.h"
+#include <stdbool.h>
 
 void bubbleSort(int *array, int lenght)
 {
  int i, j;
- for ( i = 0; i < lenght; i++) {
+ int swFlag = true;
+ for ( i = 0; i < lenght && swFlag; i++) {
+        swFlag = false;
    for (j = 0; j < lenght - 1 - i; j ++) {
         if (array[j] > array[j + 1]) {
                 swap(&array[j],&array[j + 1]);
+                swFlag = true;
         }
    }
  }

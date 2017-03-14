@@ -104,14 +104,32 @@ int main(int argc, char *argv[])
         copyArray(array, cpArray, lenght);
         printf("Not sorted Array: \n");
         printIntArray(array, &lenght);
+        printf("quickSort(array,lenght = %d,recursion = false)\n",lenght);
+        quickSort(array,lenght,0);
+        printf("Sorted Array: \n");
+        printIntArray(array, &lenght);
+        printf("\n"); 
+
+
+        copyArray(array, cpArray, lenght);
+        printf("Not sorted Array: \n");
+        printIntArray(array, &lenght);
         printf("integerSort(array,lenght = %d, %d)\n",lenght, 4*lenght);
         integerSort(array, lenght, 4*lenght);
         printf("Sorted Array: \n");
         printIntArray(array, &lenght);
         printf("\n");
 
+        copyArray(array, cpArray, lenght);
+        printf("Not sorted Array: \n");
+        printIntArray(array, &lenght);
+        printf("bucketSort(array,lenght = %d, %d)\n",lenght, 4*lenght);
+        bucketSort(array, lenght, 4*lenght);
+        printf("Sorted Array: \n");
+        printIntArray(array, &lenght);
+        printf("\n");
 
-printf("\n");
+        printf("\n");
 }
 
 void randomValue(int *array,int lenght, int maxValue)
