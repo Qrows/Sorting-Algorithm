@@ -1,3 +1,3 @@
-/* Autore Christian Santapaola
- * implementazione dell'algoritmo bucketSort
+/* Author: Christian Santapaola
+ * C implementation of BucketSort Algorithm
  */
