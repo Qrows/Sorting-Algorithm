@@ -42,7 +42,7 @@ int popFirst(LinkedList *linkl, int *returnValue)
         }
 }
 
-bool isEmpty(LinkedList const * const linkl)
+bool LinkedListIsEmpty(LinkedList const * const linkl)
 {
         if (linkl->first == NULL) {
                 return true;

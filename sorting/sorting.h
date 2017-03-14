@@ -40,3 +40,5 @@ void recursiveQuickSort(int *array, int start, int end);
 void iterativeQuickSort(int *array, int lenght);
 /*integerSort*/
 void integerSort(int *array, int lenght, int end);
+/* bucketSort */
+void bucketSort(int *array, int lenght, int maxNum);

@@ -4,6 +4,12 @@
 
 #include "queue.h"
 
+void initializeQueue(Queue *queue)
+{
+        queue->first = NULL;
+        queue->last = NULL;
+}
+
 int enqueue(Queue *queue, int data)
 {
         Record *rec = malloc(sizeof(rec));
@@ -45,7 +51,7 @@ int dequeue(Queue *queue, int *returnValue)
         }
 }
 
-bool isEmpty(Queue *queue)
+bool queueIsEmpty(Queue *queue)
 {
         if (queue->first == NULL) {
                 return true;

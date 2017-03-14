@@ -20,6 +20,6 @@ typedef struct Stack Stack;
 void initializeStack(Stack *stack);
 int push(Stack *, int elem);
 int pop(Stack *st, int *var);
-bool isEmpty(Stack *);
+bool stackIsEmpty(Stack *);
 int getHead(Stack *);
 int printStack(Stack *);

@@ -16,5 +16,5 @@ typedef struct LinkedList LinkedList;
 void initializeLinkedList(LinkedList *llptr);
 int insert(LinkedList *llptr, int elem);
 int popFirst(LinkedList *llptr,int *retVal);
-bool isEmpty(LinkedList const * const llptr);
+bool LinkedListIsEmpty(LinkedList const * const llptr);
 int printLl(LinkedList const * const llptr);

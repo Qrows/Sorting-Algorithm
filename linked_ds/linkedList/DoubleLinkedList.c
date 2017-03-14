@@ -29,7 +29,7 @@ int insert( DoubleLinkedList *dlinkl, int elem)
         return 0; 
 }
 
-bool isEmpty(DoubleLinkedList const * const dlinkl)
+bool doubleLinkedListIsEmpty(DoubleLinkedList const * const dlinkl)
 {
         return dlinkl->first == NULL;
 }

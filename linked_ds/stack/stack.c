@@ -27,7 +27,7 @@ int push(Stack *st, int elem)
 
 int pop(Stack *st, int *var)
 {
-        if (isEmpty(st)) { 
+        if (st->head == NULL) { 
                 return 1;
         }
         int elem = (st->head)->data;
@@ -39,7 +39,7 @@ int pop(Stack *st, int *var)
         return 0;
 }
 
-bool isEmpty(Stack *st)
+bool stackIsEmpty(Stack *st)
 {
         return (st->head) == NULL;
 }

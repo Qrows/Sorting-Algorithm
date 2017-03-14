@@ -50,7 +50,7 @@ void iterativeQuickSort(int *array, int lenght)
         }
         /* while the stack is not empty push 
          * inside the index of sub-array to sort */
-        while (!isEmpty(stack)) {
+        while (!stackIsEmpty(stack)) {
                 /* pop the index of the subArray to partionate*/
                 if (pop(stack, &start)) {
                         return;
