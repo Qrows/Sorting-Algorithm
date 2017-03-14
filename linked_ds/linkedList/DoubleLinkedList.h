@@ -13,6 +13,7 @@ struct DoubleLinkedList {
 };
 typedef struct DoubleLinkedList DoubleLinkedList;
 
+void initializeDoubleLinkedList(DoubleLinkedList *dllPtr);
 int insert(DoubleLinkedList *dllptr, int elem);
 bool isEmpty(DoubleLinkedList const * const dllptr);
 int deleteRecord(DoubleLinkedList *dllptr, DoubleRecord *recptr);

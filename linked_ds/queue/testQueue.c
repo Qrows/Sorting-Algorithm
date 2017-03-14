@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
                 printf("isEmpty(queue) = %d\n", isEmpty(queue));
                 printf("printQueue(queue)\n");
                 printQueue(queue);
-                Record *rec;
+                int deque;
                 for (int i = 0; i < num; i++) {
                         printf("dequeue(queue)");
-                        rec = dequeue(queue);
-                        printf(" = %d\n", rec->data);
+                        dequeue(queue, &deque);
+                        printf(" = %d\n", deque);
                         printf("isEmpty(queue) = %d\n", isEmpty(queue));
                         printQueue(queue);
-                        free(rec);
+
                 }
                 printf("isEmpty(queue) = %d\n", isEmpty(queue));
         }

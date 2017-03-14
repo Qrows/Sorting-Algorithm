@@ -4,6 +4,13 @@
 
 #include "DoubleLinkedList.h"
 
+void initializeDoubleLinkedList(DoubleLinkedList *dlinkl)
+{
+        /* set pointer to first and last to NULL*/
+        dlinkl->first = NULL;
+        dlinkl->last = NULL;
+}
+
 int insert( DoubleLinkedList *dlinkl, int elem)
 {
         DoubleRecord *rec = malloc(sizeof(rec));

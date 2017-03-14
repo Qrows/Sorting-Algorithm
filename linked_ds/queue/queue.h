@@ -20,7 +20,8 @@ struct Queue {
 };
 typedef struct Queue Queue;
 
+int initializeQueue(Queue *queue);
 int enqueue(Queue *queue, int data);
-Record *dequeue(Queue *queue);
+int dequeue(Queue *queue, int *returnValue);
 bool isEmpty(Queue *queue);
 void printQueue(Queue *queue);

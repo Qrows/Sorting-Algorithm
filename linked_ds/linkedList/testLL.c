@@ -20,8 +20,10 @@ int main(int argc, char *argv[])
                 insert(ll, i);               
         }
         printLl(ll);
+        int pop;
         for ( int i = 0; i < end; i++) {
-                printf("popfirst = %d\n", popFirst(ll));
+                popFirst(ll, &pop);
+                printf("popfirst = %d\n", pop);
                 printLl(ll);
         }
         printLl(ll);

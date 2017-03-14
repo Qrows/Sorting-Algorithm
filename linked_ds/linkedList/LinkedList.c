@@ -4,6 +4,13 @@
 
 #include "LinkedList.h"
 
+void initializeLinkedList(LinkedList *linkl)
+{
+        /*set linked list pointer to NULL*/
+        linkl->first = NULL;
+        linkl->last = NULL;
+}
+
 int insert(LinkedList *linkl, int elem)
 {
         Record *rec = malloc(sizeof(rec));
@@ -21,18 +28,27 @@ int insert(LinkedList *linkl, int elem)
         return 0;/*all went fine*/
 }
 
-int popFirst(LinkedList *linkl)
+int popFirst(LinkedList *linkl, int *returnValue)
 {
-        int retData = linkl->first->data;
-        Record *recPtr = linkl->first;
-        linkl->first = linkl->first->next;
-        free(recPtr);
-        return retData;
+        if (isEmpty(linkl)) {
+                return 1;
+        } else {
+                int retData = linkl->first->data;
+                Record *recPtr = linkl->first;
+                linkl->first = linkl->first->next;
+                free(recPtr);
+                *returnValue = retData;
+                return 0;
+        }
 }
 
 bool isEmpty(LinkedList const * const linkl)
 {
-        return linkl->first == NULL;
+        if (linkl->first == NULL) {
+                return true;
+        } else {
+                return false;
+        }
 }
 
 int printLl(LinkedList const * const linkl)
@@ -53,3 +69,4 @@ int printLl(LinkedList const * const linkl)
                 return 0;
         }
 }
+

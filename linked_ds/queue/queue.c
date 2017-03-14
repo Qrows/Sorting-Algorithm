@@ -24,21 +24,24 @@ int enqueue(Queue *queue, int data)
         }
 }
 
-Record *dequeue(Queue *queue)
+int dequeue(Queue *queue, int *returnValue)
 {
         /* deque the first record on the queue
          * return a pointer to the removed first Record */
         if ( queue->first == NULL) {
-                return NULL;
+                return 1;
         } else {
                 Record *recPtr = queue->first;
+                int val = queue->first->data;
                 queue->first = (queue->first)->next;
                 if (queue->first != NULL) {
                         queue->first->prev = NULL;
                 } else {
                         queue->last = NULL;
                 }
-                return recPtr;
+                free(recPtr);
+                *returnValue = val;
+                return 0;
         }
 }
 
