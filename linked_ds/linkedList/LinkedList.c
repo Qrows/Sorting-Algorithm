@@ -18,6 +18,7 @@ int insert(LinkedList *linkl, int elem)
                 return 1; /*error*/
         }
         rec->data = elem;
+        rec->next = NULL;
         if ( linkl->first == NULL ) {
                 linkl->first = rec;
                 linkl->last = rec;
@@ -30,7 +31,7 @@ int insert(LinkedList *linkl, int elem)
 
 int popFirst(LinkedList *linkl, int *returnValue)
 {
-        if (isEmpty(linkl)) {
+        if (linkedListIsEmpty(linkl)) {
                 return 1;
         } else {
                 int retData = linkl->first->data;
@@ -53,7 +54,7 @@ bool LinkedListIsEmpty(LinkedList const * const linkl)
 
 int printLl(LinkedList const * const linkl)
 {
-        if (isEmpty(linkl)) {
+        if (linkedListIsEmpty(linkl)) {
                 printf("NULL\n");
                 return 0;
         } else {

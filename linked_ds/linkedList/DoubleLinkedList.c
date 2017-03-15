@@ -18,6 +18,8 @@ int insert( DoubleLinkedList *dlinkl, int elem)
                 return 1;
         }
         rec->data = elem;
+        rec->prev = NULL;
+        rec->next = NULL;
         if ( dlinkl->first == NULL) {
                 dlinkl->first = rec;
                 dlinkl->last = rec;
@@ -31,7 +33,11 @@ int insert( DoubleLinkedList *dlinkl, int elem)
 
 bool doubleLinkedListIsEmpty(DoubleLinkedList const * const dlinkl)
 {
-        return dlinkl->first == NULL;
+        if (dlinkl->first == NULL) {
+                return true;
+        } else {
+                return false;
+        }
 }
 
 int deleteRecord(DoubleLinkedList *dlinkl,DoubleRecord *rec)
@@ -78,7 +84,7 @@ int deleteElem(DoubleLinkedList *dlinkl, int elem)
 
 int printDll(DoubleLinkedList const * const dlinkl)
 {
-        if (isEmpty(dlinkl)) {
+        if (doubleLinkedListIsEmpty(dlinkl)) {
                 printf("NULL\n");
                 return 0;
         } else {
