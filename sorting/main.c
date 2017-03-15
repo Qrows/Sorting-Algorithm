@@ -129,6 +129,16 @@ int main(int argc, char *argv[])
         printIntArray(array, &lenght);
         printf("\n");
 
+        copyArray(array, cpArray, lenght);
+        printf("Not sorted Array: \n");
+        printIntArray(array, &lenght);
+        printf("radixSort(array,lenght = %d)\n",lenght);
+        radixSort(array, lenght);
+        printf("Sorted Array: \n");
+        printIntArray(array, &lenght);
+        printf("\n");
+
+
         printf("\n");
 }
 

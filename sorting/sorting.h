@@ -42,3 +42,5 @@ void iterativeQuickSort(int *array, int lenght);
 void integerSort(int *array, int lenght, int end);
 /* bucketSort */
 void bucketSort(int *array, int lenght, int maxNum);
+/* radixSort */
+void radixSort(int *array, int lenght);

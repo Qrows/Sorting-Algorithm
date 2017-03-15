@@ -19,6 +19,8 @@ int enqueue(Queue *queue, int data)
         }
         rec->data = data;
         if ( queue->first == NULL) {
+                rec->prev = NULL;
+                rec->next = NULL;
                 queue->first = rec;
                 queue->last = rec;
                 return 0;
@@ -26,6 +28,7 @@ int enqueue(Queue *queue, int data)
                 rec->prev = queue->last;
                 (queue->last)->next = rec;
                 queue->last = rec;
+                rec->next = NULL;
                 return 0;
         }
 }

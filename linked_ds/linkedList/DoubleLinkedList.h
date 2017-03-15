@@ -15,7 +15,7 @@ typedef struct DoubleLinkedList DoubleLinkedList;
 
 void initializeDoubleLinkedList(DoubleLinkedList *dllPtr);
 int insert(DoubleLinkedList *dllptr, int elem);
-bool DoubleLinkedListIsEmpty(DoubleLinkedList const * const dllptr);
+bool doubleLinkedListIsEmpty(DoubleLinkedList const * const dllptr);
 int deleteRecord(DoubleLinkedList *dllptr, DoubleRecord *recptr);
 int deleteElem(DoubleLinkedList *dllptr, int elem);
 int printDll(DoubleLinkedList const * const dlinkl);
