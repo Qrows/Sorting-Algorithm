@@ -1,0 +1,265 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 43.32      9.17     9.17        1     9.17     9.20  radixSort
+ 37.98     17.22     8.04                             selectionSort
+ 10.39     19.42     2.20        1     2.20     2.22  heapSort
+  7.98     21.11     1.69                             insertionSort
+  0.09     21.13     0.02  1011685     0.00     0.00  dequeue
+  0.09     21.15     0.02   100000     0.00     0.00  extractMin
+  0.05     21.16     0.01   700000     0.00     0.00  enqueue
+  0.05     21.17     0.01   199997     0.00     0.00  merge
+  0.05     21.18     0.01                             bucketSort
+  0.05     21.19     0.01                             printIntArray
+  0.00     21.19     0.00  1011685     0.00     0.00  queueIsEmpty
+  0.00     21.19     0.00   992861     0.00     0.00  swap
+  0.00     21.19     0.00   400010     0.00     0.00  initializeQueue
+  0.00     21.19     0.00   132084     0.00     0.00  pop
+  0.00     21.19     0.00   132084     0.00     0.00  push
+  0.00     21.19     0.00    66043     0.00     0.00  stackIsEmpty
+  0.00     21.19     0.00        8     0.00     0.00  iterativeMergeSort
+  0.00     21.19     0.00        1     0.00     0.00  heapify
+  0.00     21.19     0.00        1     0.00     0.00  initializeBinaryHeap
+  0.00     21.19     0.00        1     0.00     0.00  initializeStack
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.05% of 21.19 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     81.4    8.04    9.20                 selectionSort [1]
+                9.17    0.02       1/1           radixSort [2]
+                0.00    0.00  100006/992861      swap [14]
+-----------------------------------------------
+                               19998             radixSort [2]
+                9.17    0.02       1/1           selectionSort [1]
+[2]     43.4    9.17    0.02       1+19998   radixSort [2]
+                0.01    0.00  600006/1011685     dequeue [5]
+                0.01    0.00  600000/700000      enqueue [8]
+                0.00    0.00  600006/1011685     queueIsEmpty [13]
+                0.00    0.00   99993/992861      swap [14]
+                0.00    0.00      10/400010      initializeQueue [15]
+                               19998             radixSort [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     18.5    1.69    2.22                 insertionSort [3]
+                2.20    0.02       1/1           heapSort [4]
+-----------------------------------------------
+                               19998             heapSort [4]
+                2.20    0.02       1/1           insertionSort [3]
+[4]     10.5    2.20    0.02       1+19998   heapSort [4]
+                0.02    0.00  100000/100000      extractMin [6]
+                0.00    0.00       1/1           heapify [19]
+                0.00    0.00       1/1           initializeBinaryHeap [20]
+                               19998             heapSort [4]
+-----------------------------------------------
+                0.01    0.00  411679/1011685     bucketSort [7]
+                0.01    0.00  600006/1011685     radixSort [2]
+[5]      0.1    0.02    0.00 1011685         dequeue [5]
+-----------------------------------------------
+                0.02    0.00  100000/100000      heapSort [4]
+[6]      0.1    0.02    0.00  100000         extractMin [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      0.1    0.01    0.01                 bucketSort [7]
+                0.01    0.00  411679/1011685     dequeue [5]
+                0.00    0.00  100000/700000      enqueue [8]
+                0.00    0.00  411679/1011685     queueIsEmpty [13]
+                0.00    0.00  400000/400010      initializeQueue [15]
+-----------------------------------------------
+                0.00    0.00  100000/700000      bucketSort [7]
+                0.01    0.00  600000/700000      radixSort [2]
+[8]      0.0    0.01    0.00  700000         enqueue [8]
+-----------------------------------------------
+                0.01    0.00   99984/199997      iterativeMergeSort [12]
+                0.01    0.00  100013/199997      mergeSort [10]
+[9]      0.0    0.01    0.00  199997         merge [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.0    0.00    0.01                 mergeSort [10]
+                0.01    0.00  100013/199997      merge [9]
+                0.00    0.01       8/8           iterativeMergeSort [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     0.0    0.01    0.00                 printIntArray [11]
+-----------------------------------------------
+                               37440             iterativeMergeSort [12]
+                0.00    0.01       8/8           mergeSort [10]
+[12]     0.0    0.00    0.01       8+37440   iterativeMergeSort [12]
+                0.01    0.00   99984/199997      merge [9]
+                               37440             iterativeMergeSort [12]
+-----------------------------------------------
+                0.00    0.00  411679/1011685     bucketSort [7]
+                0.00    0.00  600006/1011685     radixSort [2]
+[13]     0.0    0.00    0.00 1011685         queueIsEmpty [13]
+-----------------------------------------------
+                0.00    0.00   99993/992861      radixSort [2]
+                0.00    0.00  100006/992861      selectionSort [1]
+                0.00    0.00  396431/992861      recursiveQuickSort [45]
+                0.00    0.00  396431/992861      iterativeQuickSort [34]
+[14]     0.0    0.00    0.00  992861         swap [14]
+-----------------------------------------------
+                0.00    0.00      10/400010      radixSort [2]
+                0.00    0.00  400000/400010      bucketSort [7]
+[15]     0.0    0.00    0.00  400010         initializeQueue [15]
+-----------------------------------------------
+                0.00    0.00  132084/132084      iterativeQuickSort [34]
+[16]     0.0    0.00    0.00  132084         pop [16]
+-----------------------------------------------
+                0.00    0.00  132084/132084      iterativeQuickSort [34]
+[17]     0.0    0.00    0.00  132084         push [17]
+-----------------------------------------------
+                0.00    0.00   66043/66043       iterativeQuickSort [34]
+[18]     0.0    0.00    0.00   66043         stackIsEmpty [18]
+-----------------------------------------------
+                               87380             heapify [19]
+                0.00    0.00       1/1           heapSort [4]
+[19]     0.0    0.00    0.00       1+87380   heapify [19]
+                               87380             heapify [19]
+-----------------------------------------------
+                0.00    0.00       1/1           heapSort [4]
+[20]     0.0    0.00    0.00       1         initializeBinaryHeap [20]
+-----------------------------------------------
+                0.00    0.00       1/1           iterativeQuickSort [34]
+[21]     0.0    0.00    0.00       1         initializeStack [21]
+-----------------------------------------------
+                                8163             recursiveQuickSort [45]
+[45]     0.0    0.00    0.00       0+8163    recursiveQuickSort [45]
+                0.00    0.00  396431/992861      swap [14]
+                                8163             recursiveQuickSort [45]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [7] bucketSort             [15] initializeQueue        [17] push
+   [5] dequeue                [21] initializeStack        [13] queueIsEmpty
+   [8] enqueue                 [3] insertionSort           [2] radixSort
+   [6] extractMin             [12] iterativeMergeSort      [1] selectionSort
+   [4] heapSort                [9] merge                  [18] stackIsEmpty
+  [19] heapify                [16] pop                    [14] swap
+  [20] initializeBinaryHeap   [11] printIntArray

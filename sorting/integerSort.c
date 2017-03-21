@@ -4,7 +4,6 @@
  * Complexity time = O(n)
  */
 
-#include <stdlib.h>
 #include "sorting.h"
 
 void integerSort(int *array, int lenght, int last)
@@ -25,4 +24,5 @@ void integerSort(int *array, int lenght, int last)
                         j++;
                 }
        }
+       free(mvArray);
 }

@@ -4,7 +4,6 @@
  * Complexity time T(n) = O(n^2)
  */
 #include "sorting.h"
-#include <stdio.h>
 
 void insertionSort(int *Array, int lenght, int recursion)
 { /* choose beetween the recursive implementation or the iterative one.*/

@@ -47,7 +47,7 @@ bool stackIsEmpty(Stack *st)
 int getHead(Stack *st)
 {
         if ((st->head) == NULL) {
-        
+                return -1; 
         } else {
                 return st->head->data;
         }

@@ -2,7 +2,9 @@
  * C implementation of sorting algorithm selectionSort
  * Complexity Time T(n) = O(n^2)
  */
+
 #include "sorting.h"
+#include "utilArray.h"
 
 void selectionSort(int *array, int lenght, int recursion)
 {

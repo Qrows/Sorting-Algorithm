@@ -1,4 +1,5 @@
 #include "binaryHeap.h"
+#include <stdio.h>
 
 /* save the index of the last useful value */
 void initializeBinaryHeap(BinaryHeap *bH,int *array, int lenght)
@@ -87,8 +88,10 @@ void removeLastLeaf(BinaryHeap *bH)
         bH->heap[bH->numOfNodes - 1] = 0;
         bH->numOfNodes--;
         if (bH->numOfNodes < (bH->lenght)/2) {
+                printf("br:bH->lenght = %d\n", bH->lenght);
                 bH->heap = realloc(bH->heap, sizeof(int)*(bH->lenght)/2);
                 bH->lenght /= 2;
+                printf("ar:bH->lenght = %d\n", bH->lenght);
         }
 }
 

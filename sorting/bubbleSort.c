@@ -2,8 +2,9 @@
  * C implementation of sorting algorithm BubbleSort
  * Complexity time T(n) = O(n^2)
  */
+
 #include "sorting.h"
-#include <stdbool.h>
+#include "utilArray.h"
 
 void bubbleSort(int *array, int lenght)
 {
