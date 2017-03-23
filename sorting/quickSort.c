@@ -4,9 +4,9 @@
  * T(n) = O(n^2) in the worst case (it does not happen very often)
  */
 
-#include <stdbool.h>
 #include "sorting.h"
-#include "../linked_ds/stack/stack.h"
+#include "stack.h"
+#include "utilArray.h"
 
 int partition(int *, int, int);
 

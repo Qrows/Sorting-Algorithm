@@ -3,9 +3,9 @@
  */
 
 #include "sorting.h"
-#include "../linked_ds/queue/queue.h"
+#include "queue.h"
 
-void bucketSort(int *array, int lenght, int maxNum)
+void bucketSort(int *array , int lenght, int maxNum)
 {
         Queue *bucket[maxNum];
         int i, j;
@@ -30,7 +30,6 @@ void bucketSort(int *array, int lenght, int maxNum)
                         i++;
                 }
         }
-
         for(i = 0; i < maxNum; i++) {
                 free(bucket[i]);
         }

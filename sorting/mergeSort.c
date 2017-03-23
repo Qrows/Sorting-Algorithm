@@ -3,7 +3,7 @@
  * both iterative and recursive
  * Complexity Time T(n) = O(n*log(n))
  */
-#include <stdlib.h>
+
 #include "sorting.h"
 
 void merge(int*, int, int, int);

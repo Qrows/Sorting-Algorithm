@@ -15,4 +15,5 @@ void heapSort(int *array, int lenght)
         for (int i = 0; i < lenght; i++) {
                 array[i] = extractMin(bh);
         }
+        free(bh);
 }

@@ -1,15 +1,22 @@
 #include "binaryHeap.h"
 
+/* save the index of the last useful value */
 void initializeBinaryHeap(BinaryHeap *bH,int *array, int lenght)
 {
-        int *cpArray;
-        cpArray = malloc(sizeof(int)*lenght);
-        for (int i = 0; i < lenght; i++) {
-                cpArray[i] = array[i];
+        if (lenght == 0) {
+                return;
         }
-        free(bH->heap);
-        bH->heap = cpArray;
+        int len = lenght, i = 1;
+        while ( len != 0) {
+                len /= 2;
+                i *= 2;
+        }
+        bH->lenght = i; 
         bH->numOfNodes = lenght;
+        bH->heap = malloc(sizeof(int)*bH->lenght);
+        for (int i = 0; i < bH->numOfNodes; i++) {
+                bH->heap[i] = array[i];
+        }
 }
 
 int isALeaf(BinaryHeap *bH, int leafIndex)
@@ -46,8 +53,8 @@ void fixHeap(BinaryHeap *bH, int nodeIndex)
                 } else {
                         minSonIndex = rightSonIndex;
                 }
-        } else  if (leftSonIndex < bH->numOfNodes && rightSonIndex >= bH->numOfNodes) {
-                        minSonIndex = leftSonIndex;
+        } else {
+                minSonIndex = leftSonIndex;
                 
         }
 
@@ -74,22 +81,14 @@ void heapify(BinaryHeap *bH, int rootIndex)
         fixHeap(bH, rootIndex);
 
 }
+
 void removeLastLeaf(BinaryHeap *bH)
-{      
-        int *cpArray = malloc(sizeof(int)*(bH->numOfNodes - 1));
-        if (cpArray != NULL) {
-                if (bH->numOfNodes > 1) {
-                        for (int i = 0; i < bH->numOfNodes - 1; i++) {
-                                cpArray[i] = bH->heap[i];
-                        }
-                } else if (bH->numOfNodes == 1) {
-                        cpArray[0] = bH->heap[0];
-                }
-                free(bH->heap);
-                bH->heap = cpArray;
-                bH->numOfNodes--;
-        } else {
-                
+{     /* optimize memory allocation */ 
+        bH->heap[bH->numOfNodes - 1] = 0;
+        bH->numOfNodes--;
+        if (bH->numOfNodes < (bH->lenght)/2) {
+                bH->heap = realloc(bH->heap, sizeof(int)*(bH->lenght)/2);
+                bH->lenght /= 2;
         }
 }
 

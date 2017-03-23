@@ -3,7 +3,7 @@
  */
 
 #include "sorting.h"
-#include "../linked_ds/queue/queue.h"
+#include "queue.h"
 
 void radixSort( int *array, int lenght)
 {
@@ -26,7 +26,7 @@ void radixSort( int *array, int lenght)
         }
         while ( max / digit != 0) {
                 for ( i = 0; i < lenght; i++) {
-                        enqueue(bucket[ (array[i]/digit) % 10 ], array[i]);
+                        enqueue(bucket[(array[i]/digit) % 10], array[i]);
                 }
                 i = 0;
                 j = 0;

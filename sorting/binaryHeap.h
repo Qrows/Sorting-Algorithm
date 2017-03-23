@@ -10,6 +10,7 @@ struct binaryHeap {
 
         int *heap;
         int numOfNodes;
+        int lenght;
 };
 typedef struct binaryHeap BinaryHeap;
 
