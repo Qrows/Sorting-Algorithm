@@ -7,11 +7,15 @@
 int main(int argc, char *argv[])
 {       
         if (argc != 2 ) {
-                printf("Usage: %s lenght\nlenght is an integer.\n", argv[0]);
+                printf("Usage: %s <lenght>\nlenght is an integer \
+                                greater than 0.\n", argv[0]);
                 return EXIT_FAILURE;
         }
-
         int lenght = strtol(argv[1],NULL,10);
+        if ( lenght <= 0) {
+                printf("lenght should be a number greater than 0\n");
+                return EXIT_FAILURE;
+        }
         int array[lenght];
         int cpArray[lenght];
 
