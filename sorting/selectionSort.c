@@ -6,17 +6,31 @@
 #include "sorting.h"
 #include "utilArray.h"
 
-void selectionSort(int *array, int lenght, int recursion)
+int selectionSort(int *array, int lenght, bool recursion)
 {
-        if (recursion != 0) {
+        if (array == NULL) {
+                return EXIT_FAILURE;
+        }
+        if (lenght <= 0) {
+                return EXIT_FAILURE;
+        }
+
+        if (recursion) {
                 recursiveSelectionSort(array, lenght - 1, lenght);
         } else {
                 iterativeSelectionSort(array, lenght);
         }
+        return EXIT_SUCCESS;
 }
 
-void iterativeSelectionSort(int *array, int lenght)
+int iterativeSelectionSort(int *array, int lenght)
 {
+        if (array == NULL) {
+                return EXIT_FAILURE;
+        }
+        if (lenght <= 0) {
+                return EXIT_FAILURE;
+        }
         int minIndex, j;
         /* seleziona il k-esimo elemento */
         for (int i = 0; i < lenght; i++) {
@@ -29,12 +43,20 @@ void iterativeSelectionSort(int *array, int lenght)
                 }
                 swap(&array[i], &array[minIndex]);
         }
+        return EXIT_SUCCESS;
 }
 
-void recursiveSelectionSort(int *array, int index, int lenght)
+int recursiveSelectionSort(int *array, int index, int lenght)
 {
-        if (index < 0) {
-        /* se l'indice della parte ordianata è minore di 0 non fare niente */
+        if (array == NULL) {
+                return EXIT_FAILURE;
+        }
+        if ( lenght <= 0 || index >= lenght || index < 0) {
+                return EXIT_FAILURE;
+        }
+
+        if (index == 0) {
+                return EXIT_SUCCESS;
         } else {
                 recursiveSelectionSort(array, index - 1, lenght);
                 int minIndex = index;
@@ -44,6 +66,7 @@ void recursiveSelectionSort(int *array, int index, int lenght)
                         }
                 }
                 swap(&array[index], &array[minIndex]);
-        }       
+        }
+        return EXIT_SUCCESS;
 }
 

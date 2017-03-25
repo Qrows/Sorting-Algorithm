@@ -14,9 +14,9 @@ struct binaryHeap {
 };
 typedef struct binaryHeap BinaryHeap;
 
-void initializeBinaryHeap(BinaryHeap* bH, int *array, int lenght);
-void fixHeap(BinaryHeap *bH, int nodeIndex);
-int isALeaf(BinaryHeap *bH, int leafIndex);
-void heapify(BinaryHeap *bH, int rootIndex);
-void removeLeaf(BinaryHeap *bH, int leafIndex);
-int extractMin(BinaryHeap *bH);
+int initializeBinaryHeap(BinaryHeap* bH, int *array, int lenght);
+int fixHeap(BinaryHeap *bH, int nodeIndex);
+bool isALeaf(BinaryHeap *bH, int leafIndex);
+int heapify(BinaryHeap *bH, int rootIndex);
+int removeLeaf(BinaryHeap *bH, int leafIndex);
+int extractMin(BinaryHeap *bH, int* returnMin);

@@ -4,9 +4,6 @@
 #include "sorting.h"
 
 
-void randomValue(int *, int, int);
-void copyArray(int *, int *, int);
-
 int main(int argc, char *argv[])
 {       
         if (argc != 2 ) {
@@ -18,12 +15,12 @@ int main(int argc, char *argv[])
         int array[lenght];
         int cpArray[lenght];
 
-        void (*rFunc[])(int *, int, int) ={ insertionSort, selectionSort,
+        int (*rFunc[])(int *, int, bool) ={ insertionSort, selectionSort,
                                             mergeSort, quickSort };
 
-        void (*oiFunc[])(int *, int) = { heapSort, radixSort };
+        int (*oiFunc[])(int *, int) = { heapSort, radixSort };
 
-        void (*intFunc[])(int *, int, int) = {integerSort, bucketSort};
+        int (*intFunc[])(int *, int, int) = {integerSort, bucketSort};
         
         char *rFuncName[] = { "insertionSort","selectionSort","mergeSort",
                               "quickSort"};
@@ -46,7 +43,11 @@ int main(int argc, char *argv[])
         printf("%s\n", "Not sorted Array: ");
         printIntArray(array, &lenght);
         
-        rFunc[i](array, lenght , recursion);
+        if (rFunc[i](array, lenght , recursion)) {
+                printf("Error in %s(array, lenght = %d, recursion = %d)\n",
+                        rFuncName[i], lenght, recursion);
+                return EXIT_FAILURE;
+        }
         printf("%s(array, lenght = %d, recursion = %d)\n",
                rFuncName[i], lenght, recursion);
         
@@ -63,7 +64,11 @@ int main(int argc, char *argv[])
         printf("%s\n", "Not sorted Array: ");
         printIntArray(array, &lenght);
         
-        rFunc[i](array, lenght , recursion);
+        if (rFunc[i](array, lenght , recursion)) {
+                printf("ERROR in %s(array, lenght = %d, recursion = %d)\n",
+                        rFuncName[i], lenght, recursion);
+                return EXIT_FAILURE;
+        }
         printf("%s(array, lenght = %d, recursion = %d)\n",
                rFuncName[i], lenght, recursion);
         
@@ -79,7 +84,12 @@ int main(int argc, char *argv[])
         printf("%s\n", "Not sorted Array: ");
         printIntArray(array, &lenght);
 
-        oiFunc[i](array, lenght);
+        if (oiFunc[i](array, lenght)) {
+                printf("ERROR in %s(array, lenght = %d)\n",
+                        oiFuncName[i], lenght);
+                return EXIT_FAILURE;
+        }
+
         printf("%s(array, lenght = %d)\n",
                oiFuncName[i], lenght);
 
@@ -95,7 +105,12 @@ int main(int argc, char *argv[])
         printf("%s\n", "Not sorted Array: ");
         printIntArray(array, &lenght);
         
-        intFunc[i](array, lenght , maxNumber);
+        if (intFunc[i](array, lenght , maxNumber)) {
+                printf("ERROR in %s(array, lenght = %d, maxNum = %d)\n",
+                        intFuncName[i], lenght, maxNumber);
+                return EXIT_FAILURE;
+ 
+        }
         printf("%s(array, lenght = %d, maxNum = %d)\n",
                intFuncName[i], lenght, maxNumber);
         
@@ -110,16 +125,3 @@ int main(int argc, char *argv[])
         return EXIT_SUCCESS;
 }
 
-void randomValue(int *array,int lenght, int maxValue)
-{
-        for ( int i = 0; i < lenght; i++) {
-                array[i] = rand() % maxValue;
-        }
-}
-
-void copyArray(int *array, int* cpArray, int lenght)
-{
-  for ( int i = 0; i < lenght; i++) {
-        array[i] = cpArray[i];
-  }
-}

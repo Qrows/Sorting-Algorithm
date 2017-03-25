@@ -6,36 +6,40 @@
 #include <stdbool.h>
 
 /* insertionSort*/
-void insertionSort(int *Array, int len, int recursion);
+int insertionSort(int *Array, int len, bool recursion);
 /*recursive insertionSort */
-void recursiveInsertionSort(int *array, int lenght);
+int recursiveInsertionSort(int *array, int lenght);
 /*iterative insertionSort */
-void iterativeInsertionSort(int *array, int lenght);
+int iterativeInsertionSort(int *array, int lenght);
 /*selectionSort*/
-void selectionSort(int *array, int lenght, int recursion);
+int selectionSort(int *array, int lenght, bool recursion);
 /*recursive selectionSort*/
-void recursiveSelectionSort(int *array, int index , int lenght);
+int recursiveSelectionSort(int *array, int index , int lenght);
 /*iterative selectionSort*/
-void iterativeSelectionSort(int *array, int lenght);
+int iterativeSelectionSort(int *array, int lenght);
 /* bubbleSort */
-void bubbleSort(int *array, int lenght);
+int bubbleSort(int *array, int lenght);
 /* heapSort */
-void heapSort(int *array, int lenght);
+int heapSort(int *array, int lenght);
 /*mergeSort*/
-void mergeSort(int *array, int lenght, int recursion);
+int mergeSort(int *array, int lenght, bool recursion);
+/* merge procedure */
+int merge(int*array, int start, int piv, int end);
 /*recursive mergeSort*/
-void recursiveMergeSort(int *array, int start ,int end);
+int recursiveMergeSort(int *array, int start ,int end);
 /*iterative mergeSort*/
-void iterativeMergeSort(int *array, int lenght);
+int iterativeMergeSort(int *array, int lenght);
 /* quickSort */
-void quickSort(int *array, int lenght, int recursion);
+int quickSort(int *array, int lenght, bool recursion);
+/* partition function for quicksort */
+int partition(int *array, int i,int f, int *returnSup);
 /* recursive quickSort*/
-void recursiveQuickSort(int *array, int start, int end);
+int recursiveQuickSort(int *array, int start, int end);
 /* iterative quickSort */
-void iterativeQuickSort(int *array, int lenght);
+int iterativeQuickSort(int *array, int lenght);
 /*integerSort*/
-void integerSort(int *array, int lenght, int end);
+int integerSort(int *array, int lenght, int end);
 /* bucketSort */
-void bucketSort(int *array, int lenght, int maxNum);
+int bucketSort(int *array, int lenght, int maxNum);
 /* radixSort */
-void radixSort(int *array, int lenght);
+int radixSort(int *array, int lenght);

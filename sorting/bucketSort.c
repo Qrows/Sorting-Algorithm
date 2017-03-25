@@ -5,13 +5,25 @@
 #include "sorting.h"
 #include "queue.h"
 
-void bucketSort(int *array , int lenght, int maxNum)
+int bucketSort(int *array , int lenght, int maxNum)
 {
+        if (array == NULL) {
+                return EXIT_FAILURE;
+        }
+        if ( lenght < 0) {
+                return EXIT_FAILURE;
+        }
+        if ( maxNum < 0 ) {
+                return EXIT_FAILURE;
+        }
         Queue *bucket[maxNum];
         int i, j;
         /* initialize the Queue parameter */
         for (i = 0; i < maxNum; i++) {
                 bucket[i] = malloc(sizeof(Queue));
+                if (bucket[i] == NULL) {
+                        return EXIT_FAILURE;
+                }
                 initializeQueue(bucket[i]);
         }
         /* enqueue the value */
@@ -33,4 +45,5 @@ void bucketSort(int *array , int lenght, int maxNum)
         for(i = 0; i < maxNum; i++) {
                 free(bucket[i]);
         }
+        return EXIT_SUCCESS;
 }

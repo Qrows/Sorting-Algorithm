@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "sorting.h"
+#include "utilArray.h"
 
 void swap(int *elem1, int *elem2) {
         int tmp = *elem1;
@@ -49,4 +49,18 @@ void printDoubleArray(double *Array, int *lenght)
         }
 
         printf("]\n");
+}
+
+void randomValue(int *array,int lenght, int maxValue)
+{
+        for ( int i = 0; i < lenght; i++) {
+                array[i] = rand() % maxValue;
+        }
+}
+
+void copyArray(int *array, int* cpArray, int lenght)
+{
+  for ( int i = 0; i < lenght; i++) {
+        array[i] = cpArray[i];
+  }
 }

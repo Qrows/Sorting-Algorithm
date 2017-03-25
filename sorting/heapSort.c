@@ -7,13 +7,20 @@
 #include "sorting.h"
 #include "binaryHeap.h"
 
-void heapSort(int *array, int lenght)
+int heapSort(int *array, int lenght)
 {
         BinaryHeap *bh = malloc(sizeof(bh));
+        if (bh == NULL) {
+                return EXIT_FAILURE;
+        }
         initializeBinaryHeap(bh, array, lenght);
         heapify(bh, 0);
         for (int i = 0; i < lenght; i++) {
-                array[i] = extractMin(bh);
+                /* put extractMin return value in array[i] */
+                if (extractMin(bh, &array[i])) {
+                        return EXIT_FAILURE;
+                }
         }
         free(bh);
+        return EXIT_SUCCESS;
 }

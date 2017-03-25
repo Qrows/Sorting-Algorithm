@@ -5,7 +5,7 @@ VPATH = ./sorting:./linked_ds/stack:./linked_ds/queue
 
 CFILE = ./sorting/main.c  ./sorting/binaryHeap.c  ./sorting/bubbleSort.c  ./sorting/bucketSort.c \
 	./sorting/heapSort.c  ./sorting/insertionSort.c  ./sorting/integerSort.c  ./sorting/mergeSort.c \
-	./sorting/printArray.c  ./sorting/quickSort.c  ./sorting/radixSort.c  ./sorting/selectionSort.c \
+	./sorting/utilArray.c  ./sorting/quickSort.c  ./sorting/radixSort.c  ./sorting/selectionSort.c \
 	./linked_ds/queue/queue.c ./linked_ds/stack/stack.c
 
 HEADER = ./sorting/binaryHeap.h ./sorting/utilArray.h ./linked_ds/queue/queue.h ./linked_ds/stack/stack.h

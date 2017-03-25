@@ -5,11 +5,19 @@
 #include "sorting.h"
 #include "queue.h"
 
-void radixSort( int *array, int lenght)
+int radixSort( int *array, int lenght)
 {
-        if ( lenght <= 1) {
-                return;
+        if (array == NULL) {
+                return EXIT_FAILURE;
         }
+        if (lenght <= 0) {
+                return EXIT_FAILURE;
+        }
+
+        if ( lenght == 1) {
+                return EXIT_SUCCESS;
+        }
+
         int max = array[0];
         int i, j;
         int digit = 1;
@@ -17,6 +25,9 @@ void radixSort( int *array, int lenght)
         Queue *bucket[10];
         for (i = 0; i < 10; i++) {
                 bucket[i] = malloc(sizeof(Queue));
+                if (bucket[i] == NULL) {
+                        return EXIT_FAILURE;
+                }
                 initializeQueue(bucket[i]);
         }
         for (i = 0; i < lenght; i++) {
@@ -44,6 +55,7 @@ void radixSort( int *array, int lenght)
                 free(bucket[i]);
 
         }
+        return EXIT_SUCCESS;
 }
 
 
