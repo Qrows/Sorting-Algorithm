@@ -1,6 +1,6 @@
 CC = gcc
 TARGET = SortingTest
-CFLAGS = -Wall -Wextra -O2 -I ./sorting -I ./linked_ds/stack -I ./linked_ds/queue
+CFLAGS = -Wall -Wextra  -I ./sorting -I ./linked_ds/stack -I ./linked_ds/queue
 VPATH = ./sorting:./linked_ds/stack:./linked_ds/queue
 
 CFILE = ./sorting/main.c  ./sorting/binaryHeap.c  ./sorting/bubbleSort.c  ./sorting/bucketSort.c \
